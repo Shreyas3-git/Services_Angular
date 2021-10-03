@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { UsersDataService } from './users-data.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,44 +9,14 @@ export class AppComponent {
   title = 'sturctural-directives';
   isCheck : boolean = false;
   product : any;
-
-  constructor() {
-    this.product = [
-      {
-        "id":1001,
-        "name":"Watch",
-        "brand":"apple",
-        "price":120000
-      },
-      {
-        "id":1002,
-        "name":"service",
-        "brand":"titan",
-        "price":3500
-      },
-      {
-        "id":1003,
-        "name":"blackparel",
-        "brand":"rollex",
-        "price":2000000
-      }
-    ];
-  
-  }
-  showMsg() : void {
-    this.isCheck = true;
-  }
-
-  getProductValue(val)
+  name : string ;
+  constructor(private user:UsersDataService) 
   {
-      console.log(val.target.value);
+      console.warn(this.user.getData);
+      let object = this.user.getData();
+      this.name = object.name;
+      console.error(this.name);
   }
-}
-function showMsg() {
-  throw new Error('Function not implemented.');
-}
-
-function getProductValue(val: any) {
-  throw new Error('Function not implemented.');
+  
 }
 
