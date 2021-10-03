@@ -5,14 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class UsersDataService {
 
+  arr : any[] ;
   constructor() { }
 
 
-  getData() {
-    return {
-      name: 'anil',
-      age: 22,
-      id:1
-    }
+  getData()
+  {
+     return   {
+         id:1,
+         product:"Laptop",
+         price:70000
+       }
   }
 }
