@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { UsersDataService } from './users-data.service';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -35,7 +37,12 @@ export class AppComponent {
       let object = this.user.getData();
       this.productName = object.product;
       console.error(this.productName);
+
+      this.user.setUrl().subscribe(data =>{
+        console.warn(data);
+      })
   }
+
 
   getValues(value)
   {
@@ -46,5 +53,7 @@ export class AppComponent {
   {
       this.isCheck = true;
   } 
+
+
 }
 
