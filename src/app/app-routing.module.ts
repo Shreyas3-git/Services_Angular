@@ -8,4 +8,8 @@ const routes: Routes = [];
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+title = "sturctural-directives";
+
+isCheck :boolean = true;
+}
